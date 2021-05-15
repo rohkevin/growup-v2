@@ -1,0 +1,78 @@
+Test cases for login
+
+1. Sign up 
+  Open signup modal 
+  Clear passwordref
+  Enter email
+  Enter password
+  Re-enter password to confirm
+  Button / Enter to submit
+
+  (Same as login)
+  [OK] If submit is good
+    Notify success
+    Start timer
+    Stay logged in
+    Close modal
+    Redirect to dashboard
+  If submit is bad (Passwords do not match, email already exists)
+    If pw not match:
+      [OK] Notify pw bad
+    If email exists:
+      [OK] Notify email already exists
+
+2. Log in
+  Open signup modal
+  Open login modal
+  Clear passwordref
+  Enter email
+  Enter password
+  Button / Enter to submit
+
+  (Same as register)
+  [OK] If submit is good
+    Notify success
+    Start timer
+    Stay logged in
+    Close modal
+    Redirect to dashboard
+  If submit is bad (Email dne, password incorrect)
+    [OK] Notify failure type
+    [OK] Don't close modal
+
+3. Log out
+  Open loggedout modal
+  Click logout
+  Redirect to home
+
+4. Forgot password - Reset page
+  Open signup modal
+  Click already have account to log in
+  Click forgot your password
+  Redirect to /auth/reset
+  Enter email
+  Click send
+  Notify to wait
+
+5. Update profile - Update page through settings
+
+[ OK ] Pages only accessible when logged in:
+/dashboard
+/update-profile
+> Should redirect to home if not logged in
+
+Pages only accessible to certain users:
+/write
+> If not certified, remove write option + private route it 
+
+Edge cases
+
+
+Still to work on:
+1. [OK] Pressing enter on Login / Signup activates the submit not anything else
+2. [OK - NOT USING FB] Sign up with Facebook / Google
+3. [NEEDS WORK] Dashboard contents
+4. Writing post component
+5. Searchbar function
+6. Finish setting up email signup => redirect to a page to enter name, picture (optional)
+7. Google sign up login get name and picture
