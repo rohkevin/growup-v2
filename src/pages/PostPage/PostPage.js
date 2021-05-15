@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { useGlobalContext } from '../../context'
 import { useParams } from 'react-router-dom'
-import SubscribeBlock from '../../components/SubscribeBlock'
-import Loading from '../../components/Loading'
+
+import SubscribeBlock from '../../components/SubscribeBlock/SubscribeBlock'
+import Loading from '../../components/Loading/Loading'
 
 function PostPage() {
   const [post, setPost] = useState(null);

@@ -1,6 +1,7 @@
 import React, { useRef, useEffect } from 'react'
 import { FaSearch, FaTimes } from 'react-icons/fa';
-import { useGlobalContext } from '../context'
+import { useGlobalContext } from '../../context'
+
 function Searchbar() {
   const { showSearch, toggleSearch } =  useGlobalContext();
   const searchBox = useRef('');

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { useGlobalContext } from '../context'
+import { useGlobalContext } from '../../context'
+
 function TopicPagePost({ coverImage, title, date, author, authimg, content }) {
   const { attachName } = useGlobalContext();
   const [windowSize, setWindowSize] = useState(window.innerWidth);

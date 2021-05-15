@@ -5,7 +5,7 @@ import app from '../../firebase'
 import { topics } from '../../data'
 import { useGlobalContext } from '../../context'
 
-import CreatePostError from '../../components/CreatePostError'
+import CreatePostError from '../../components/CreatePostError/CreatePostError'
 
 function NewStory() {
   const titleRef = useRef();

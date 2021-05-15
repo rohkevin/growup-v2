@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { social } from '../data'
+import { social } from '../../data'
 
 function Footer() {
   return (

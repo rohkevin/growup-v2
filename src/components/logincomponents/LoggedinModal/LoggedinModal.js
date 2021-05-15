@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { Link, useHistory } from 'react-router-dom'
-import { useGlobalContext } from '../../context'
-import { useAuth } from '../../AuthContext'
+import { useGlobalContext } from '../../../context'
+import { useAuth } from '../../../AuthContext'
 
 function LoggedinModal() {
   const { loggedinModalOpen, handleOutsideClick, loginLocation } = useGlobalContext();

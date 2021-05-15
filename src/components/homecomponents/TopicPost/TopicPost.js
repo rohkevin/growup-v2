@@ -1,21 +1,21 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { useGlobalContext } from '../../context'
-function FeaturedPost({ id, url, coverImage, title, date, author, authimg }) {
+import { useGlobalContext } from '../../../context'
+function TopicPost({ coverImage, title, author, authimg, content }) {
   const { attachName } = useGlobalContext();
   const linkName=attachName(title);
   return (
-    <Link to={`/article/${linkName}`} className="post-container">
-      <div className="post-image">
+    <Link to={`/article/${linkName}`} className="tp-container">
+      <div className="tp-image">
         <img src={coverImage} alt={title}></img>
       </div>
-      <div className="text-container">
-        <p className="post-date">{date}</p>
-        <h2 className="post-title">{title}</h2>
+      <div className="tp-text-container">
+        <h2 className="tp-post-title">{title}</h2>
+        <p className="tp-text">{content.substring(0,150)}...</p>
         <div className="author-container">
           <div className="author-image-container">
             <img src={authimg} alt={author}/>
-          </div>
+          </div> 
           
           <p>{author}</p>
         </div>
@@ -24,4 +24,4 @@ function FeaturedPost({ id, url, coverImage, title, date, author, authimg }) {
   )
 }
 
-export default FeaturedPost
+export default TopicPost

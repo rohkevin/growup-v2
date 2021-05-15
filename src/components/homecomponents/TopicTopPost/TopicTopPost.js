@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { useGlobalContext } from '../../context'
+import { useGlobalContext } from '../../../context'
 function TopicTopPost({ id, index, url, coverImage, title }) {
   const { attachName } = useGlobalContext();
   const linkName=attachName(title);

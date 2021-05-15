@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import { useGlobalContext } from '../context'
+import { useGlobalContext } from '../../context'
 import { FaTimes, FaChevronRight } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
-import { social, topics } from '../data'
+import { social, topics } from '../../data'
 
 function Sidenav() {
   const { sideNavOpen, setSideNavOpen, toggleMenu } = useGlobalContext();

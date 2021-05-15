@@ -1,10 +1,11 @@
 import React from 'react'
-import { useGlobalContext } from '../context'
-import { useAuth } from '../AuthContext'
-import Searchbar from './Searchbar'
+import { useGlobalContext } from '../../context'
+import { useAuth } from '../../AuthContext'
 import { FaBars } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
-import { topics } from '../data'
+import { topics } from '../../data'
+
+import Searchbar from '../Searchbar/Searchbar'
 
 function Navbar() {
   const { toggleMenu, toggleLoginModal, toggleLoggedInModal } = useGlobalContext();

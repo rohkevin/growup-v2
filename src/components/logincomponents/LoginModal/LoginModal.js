@@ -1,9 +1,10 @@
 import React, { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
-import { useGlobalContext } from '../../context'
-import { useAuth } from '../../AuthContext'
+import { useGlobalContext } from '../../../context'
+import { useAuth } from '../../../AuthContext'
 import { FaTimes, FaGoogle } from 'react-icons/fa'
-import LoginMessage from '../logincomponents/LoginMessage'
+
+import LoginMessage from '../LoginMessage/LoginMessage'
 
 
 function LoginModal() {
