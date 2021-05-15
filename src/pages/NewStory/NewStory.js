@@ -1,10 +1,11 @@
 import React, {useState, useEffect, useRef} from 'react'
-import app from '../firebase'
-import { topics } from '../data'
 import { useHistory } from 'react-router-dom'
-import { useGlobalContext } from '../context'
 import { useForm } from 'react-hook-form'
-import CreatePostError from '../components/CreatePostError'
+import app from '../../firebase'
+import { topics } from '../../data'
+import { useGlobalContext } from '../../context'
+
+import CreatePostError from '../../components/CreatePostError'
 
 function NewStory() {
   const titleRef = useRef();

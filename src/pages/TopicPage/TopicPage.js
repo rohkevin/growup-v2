@@ -1,10 +1,10 @@
 import React, { Fragment, useState } from 'react'
-import { useGlobalContext } from '../context'
+import { useGlobalContext } from '../../context'
 import { useParams } from 'react-router-dom'
-import { topics as topicsData } from '../data'
-import TopicPagePost from '../components/TopicPagePost'
-import SubscribeBlock from '../components/SubscribeBlock.js'
-import Loading from '../components/Loading'
+import { topics as topicsData } from '../../data'
+import TopicPagePost from '../../components/TopicPagePost'
+import SubscribeBlock from '../../components/SubscribeBlock.js'
+import Loading from '../../components/Loading'
 
 function TopicPage() {
   const [articleIndex, setArticleIndex] = useState(5);

@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react'
-import FeaturedPost from '../components/homecomponents/FeaturedPost'
-import TopicTopPost from '../components/homecomponents/TopicTopPost'
-import TopicPost from '../components/homecomponents/TopicPost'
-import Loading from '../components/Loading'
-import { useGlobalContext } from '../context'
+import FeaturedPost from '../../components/homecomponents/FeaturedPost'
+import TopicTopPost from '../../components/homecomponents/TopicTopPost'
+import TopicPost from '../../components/homecomponents/TopicPost'
+import Loading from '../../components/Loading'
+import { useGlobalContext } from '../../context'
 import { Link } from 'react-router-dom'
-import { topics } from '../data'
+import { topics } from '../../data'
 
 function Home() {
   const { isLoading, setIsLoading, blogPosts, handleOutsideClick } = useGlobalContext();

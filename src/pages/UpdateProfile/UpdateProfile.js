@@ -1,8 +1,8 @@
 import React, { useRef } from 'react'
 import { Link, useHistory } from 'react-router-dom'
-import { useGlobalContext } from '../context'
-import { useAuth } from '../AuthContext'
-import LoginMessage from '../components/logincomponents/LoginMessage'
+import { useGlobalContext } from '../../context'
+import { useAuth } from '../../AuthContext'
+import LoginMessage from '../../components/logincomponents/LoginMessage'
 
 function UpdateProfile() {
   const { showAlert, loginAlert } = useGlobalContext();

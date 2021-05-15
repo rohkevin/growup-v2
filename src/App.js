@@ -1,20 +1,22 @@
 import React, { useEffect } from 'react'
+import { BrowserRouter as Router, Route, Switch, useLocation } from 'react-router-dom'
+import PrivateRoute from './PrivateRoute'
+
 import Navbar from './components/Navbar'
 import Sidenav from './components/Sidenav'
 import LoginModal from './components/logincomponents/LoginModal'
 import LoggedinModal from './components/logincomponents/LoggedinModal'
-import Dashboard from './pages/Dashboard'
-import Home from './pages/Home'
-import TopicPage from './pages/TopicPage'
-import PostPage from './pages/PostPage'
-import NewStory from './pages/NewStory'
-import About from './pages/About'
 import Footer from './components/Footer'
-import Error from './pages/Error'
-import PrivateRoute from './PrivateRoute'
-import PasswordReset from './pages/PasswordReset'
-import UpdateProfile from './pages/UpdateProfile'
-import { BrowserRouter as Router, Route, Switch, useLocation } from 'react-router-dom'
+
+import Dashboard from './pages/Dashboard/Dashboard'
+import Home from './pages/Home/Home'
+import TopicPage from './pages/TopicPage/TopicPage'
+import PostPage from './pages/PostPage/PostPage'
+import NewStory from './pages/NewStory/NewStory'
+import About from './pages/About/About'
+import Error from './pages/Error/Error'
+import PasswordReset from './pages/PasswordReset/PasswordReset'
+import UpdateProfile from './pages/UpdateProfile/UpdateProfile'
 
 function ScrollToTop() {
   const { pathname } = useLocation();
