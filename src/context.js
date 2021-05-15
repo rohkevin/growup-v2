@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
-import app from './firebase'
+import { db, app } from './firebase'
 
 
 const AppContext = React.createContext();
@@ -16,25 +16,40 @@ function AppProvider({ children }) {
   const [loginAlert, setLoginAlert] = useState({show: false, type: '', msg: ''});
   const [blogPosts, setBlogPosts] = useState();
 
-  useEffect(()=>{
-    setIsLoading(true);
-    app.database()
-    .ref("/posts")
-    .once("value")
-    .then(snapshot => {
+  // useEffect(()=>{
+  //   setIsLoading(true);
+  //   app.database()
+  //   .ref("/posts")
+  //   .once("value")
+  //   .then(snapshot => {
       
-      let posts = [];
-      const snapshotValue = snapshot.val();
-      for (let postID in snapshotValue){
-        let parsedDate = Date.parse(snapshotValue[postID].dateFormatted);
-        snapshotValue[postID].dateFormatted = parsedDate;
-        posts.push(snapshotValue[postID])
-      }
-      const sortByDate = posts.sort((a,b) => b.dateFormatted - a.dateFormatted);
-      setBlogPosts(sortByDate);
-      setIsLoading(false);
+  //     let posts = [];
+  //     const snapshotValue = snapshot.val();
+  //     for (let postID in snapshotValue){
+  //       let parsedDate = Date.parse(snapshotValue[postID].dateFormatted);
+  //       snapshotValue[postID].dateFormatted = parsedDate;
+  //       posts.push(snapshotValue[postID])
+  //     }
+  //     const sortByDate = posts.sort((a,b) => b.dateFormatted - a.dateFormatted);
+  //     setBlogPosts(sortByDate);
+  //     setIsLoading(false);
+  //   })
+  // },[])
+
+  useEffect(() => {
+    setIsLoading(true);
+
+    db.collection("posts").onSnapshot(snap => {
+      const posts = snap.docs.map(doc => ({
+        id: doc.id,
+        ...doc.data()
+      }));
+      console.log(posts);
+      setBlogPosts(posts);
     })
-  },[])
+
+    setIsLoading(false);
+  }, [])
 
   const toggleMenu = () => {
     setSideNavOpen(!sideNavOpen);
