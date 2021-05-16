@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { BrowserRouter as Router, Route, Switch, useLocation } from 'react-router-dom'
+import { BrowserRouter as Router, Redirect, Route, Switch, useLocation } from 'react-router-dom'
 import PrivateRoute from './PrivateRoute'
 
 import Navbar from './components/Navbar/Navbar'
@@ -18,6 +18,7 @@ import Error from './pages/Error/Error'
 import PasswordReset from './pages/PasswordReset/PasswordReset'
 import UpdateProfile from './pages/UpdateProfile/UpdateProfile'
 import SearchPage from './pages/SearchPage/SearchPage'
+import { useGlobalContext } from './context'
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -28,6 +29,7 @@ function ScrollToTop() {
 }
 
 function App() {
+  const { searchTerm } = useGlobalContext();
   return (
     <Router>
       <ScrollToTop/>
@@ -39,12 +41,12 @@ function App() {
           <Route exact path="/" component={Home}/>
           <Route exact path="/topic/:topic" component={TopicPage}/>
           <Route path="/article/:linkName" component={PostPage}/>
+          <Route path="/search=:searchTerm" component={SearchPage}/>
           <Route path="/about" component={About}/>
           <PrivateRoute exact path="/dashboard" component={Dashboard}/>
           <PrivateRoute exact path="/write" component={NewStory}/>
           <Route path="/auth/reset" component={PasswordReset}/>
           <PrivateRoute path="/update-profile" component={UpdateProfile}/>
-          <Route exact path="/search?q=:searchTerm" component={SearchPage}/>
           <Route path="*" component={Error}/>
         </Switch>
         <Footer/>

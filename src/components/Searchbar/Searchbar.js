@@ -1,12 +1,11 @@
 import React, { useRef, useEffect } from 'react'
 import './Searchbar.css'
-import { Redirect, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { FaSearch, FaTimes } from 'react-icons/fa';
 import { useGlobalContext } from '../../context'
 
 function Searchbar() {
   const { showSearch, toggleSearch, searchTerm, setSearchTerm } =  useGlobalContext();
-  // const searchBox = useRef('');
 
   let history = useHistory();
 
@@ -16,7 +15,10 @@ function Searchbar() {
   }
   const handleSubmit = (e) => {
     e.preventDefault();
-    history.push(`/search?q=${searchTerm}`);
+    if (searchTerm !== "") {
+      history.push(`/search=${searchTerm}`);
+      setSearchTerm("");
+    }
   }
   return (
     <form onSubmit={handleSubmit} className="tempform">

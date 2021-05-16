@@ -1,0 +1,99 @@
+.searchpage-post-container{
+  display: grid;
+  width: 100%;
+  background-color: var(--nav-color);
+  border-radius: 3px;
+  box-shadow: 0px 5px 15px var(--light-shadow-color);
+  margin-bottom: 2rem;
+}
+.searchpage-post-image{
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  z-index: 0;
+}
+.searchpage-post-image img{
+  display: block;
+  max-width: 100%;
+  width: 100%;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  transform: scale(1);
+}
+.searchpage-post-container:hover .post-image img{
+  transform: scale(1.05);
+}
+.searchpage-text-container{
+  padding: 1rem 0.5rem;
+}
+.searchpage-post-date{
+  margin: 0.5rem 0;
+  font-size: 0.75rem;
+  color: var(--dark-font-color);
+}
+.searchpage-post-title{
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+.searchpage-author-container{
+  margin: 0.5rem 0;
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+.searchpage-author-image-container{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+.searchpage-author-image-container img{
+  object-fit: cover;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+.searchpage-author-container p{
+  font-size: 0.875rem;
+}
+
+
+@media screen and (min-width: 800px){
+  .searchpage-post-container{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    max-height: 250px;
+    margin: 1rem 0;
+  }
+  .searchpage-post-image{
+    height: 250px;
+    width: 400px;
+    border-radius: 0;
+  }
+  .searchpage-post-image img{
+    object-fit: cover;
+    height: 100%;
+    max-width: 100%;
+    border-radius: 0;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+  }
+  .searchpage-post-container:hover .searchpage-post-image img{
+    transform: scale(1.05);
+  }
+  .searchpage-text-container{
+    padding: 1rem 2rem;
+  }
+  .searchpage-post-content {
+    margin: 1rem 0;
+  }
+  .searchpage-post-content p{
+    color: var(--dark-font-color);
+    font-size: 0.875rem;
+    font-weight: 300;
+    line-height: 1.4;
+  }
+}

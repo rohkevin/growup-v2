@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
+import { useLocation } from 'react-router';
 import { db, app } from './firebase'
 
 
@@ -16,7 +17,9 @@ function AppProvider({ children }) {
   const [loginAlert, setLoginAlert] = useState({show: false, type: '', msg: ''});
   const [blogPosts, setBlogPosts] = useState();
   const [searchTerm, setSearchTerm] = useState('');
+  const [searchPosts, setSearchPosts] = useState(null);
 
+  // Retrieve Data
   useEffect(() => {
     setIsLoading(true);
 
@@ -31,15 +34,21 @@ function AppProvider({ children }) {
     setIsLoading(false);
   }, [])
 
+  // Menu
   const toggleMenu = () => {
     setSideNavOpen(!sideNavOpen);
-  }
-  const toggleSearch = () => { 
-    setShowSearch(!showSearch);
   }
   const closeSideMenu = () => {
     setSideNavOpen(false);
   }
+
+  // Search
+
+  const toggleSearch = () => { 
+    setShowSearch(!showSearch);
+  }
+
+  // Login
   const closeLoginModal = () => {
     setLoginModalOpen(false);
   }
@@ -55,6 +64,9 @@ function AppProvider({ children }) {
     }
     if(!e.target.classList.contains('show-loggedin')){
       closeLoggedinModal();
+    }
+    if(!e.target.classList.contains('show-search')){
+      setShowSearch(false);
     }
   }
   // Replace whitespace, commas, periods, questionmarks, exclamationmarks
@@ -81,7 +93,7 @@ function AppProvider({ children }) {
         isLoading, setIsLoading,
         sideNavOpen, setSideNavOpen,
         toggleMenu,
-        showSearch, setShowSearch, toggleSearch, searchTerm, setSearchTerm,
+        showSearch, setShowSearch, toggleSearch, searchTerm, setSearchTerm, searchPosts,
         blogPosts,
         handleOutsideClick,
         attachName,
