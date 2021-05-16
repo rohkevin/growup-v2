@@ -1,29 +1,12 @@
 ==========================================================================
 TO DO LIST
 ==========================================================================
+
+*** HIGH PRIORITY ***
+
 1. Write to Firebase
   > Authenticate inputs
     - Image src needs to be image (see img src onerror)
-
-2. Sign up require author image
-  > Redirect to registration page if signing up with email
-    Name, image
-  > Google automatically gives Google image
-
-3. Update profile page/settings allows image upload and name change
-
-4. Authorized users only able to access Write component
-  > Firebase Admin SDK install
-  > https://www.youtube.com/watch?v=WtYzHTXHBp0&list=PLnepGR_yu2ekWVHK_PEXGBv3TxFDOrSLs
-  > Set Firebase admin levels
-  > https://www.youtube.com/watch?v=3hj_r_N0qMs
-  > https://firebase.google.com/docs/admin/setup?authuser=0
-  > Private key is located inside private folder of this project
-
-5. Security for authentication
-
-6. Unique blog posts
-  > Change blog post contents and pics
 
 7. Firebase 
   > Change to auth-production which disables localhost:3000
@@ -35,6 +18,30 @@ TO DO LIST
   > Simple useState and filter
   > Appearance like topic page, header "Search for: SEARCHTERM"
 
+*** MEDIUM PRIORITY ***
+
+3. Update profile page/settings allows image upload and name change
+
+4. Authorized users only able to access Write component
+  > Firebase Admin SDK install
+  > https://www.youtube.com/watch?v=WtYzHTXHBp0&list=PLnepGR_yu2ekWVHK_PEXGBv3TxFDOrSLs
+  > Set Firebase admin levels
+  > https://www.youtube.com/watch?v=3hj_r_N0qMs
+  > https://firebase.google.com/docs/admin/setup?authuser=0
+  > Private key is located inside private folder of this project
+
+
+*** LOW PRIORITY ***
+
+2. Sign up require author image
+  > Redirect to registration page if signing up with email
+    Name, image
+  > Google automatically gives Google image
+
+5. Security for authentication
+
+6. Unique blog posts
+  > Change blog post contents and pics
 
 11. Create posts 
 
