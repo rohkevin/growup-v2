@@ -36,9 +36,9 @@ TO DO LIST
   > Appearance like topic page, header "Search for: SEARCHTERM"
 
 10. Author Image 
-  > Home page - Featured posts, Topic posts
-  > Topic page
-  > Topic post page
+  x> Home page - Featured posts, Topic posts
+  x> Topic page
+  x> Topic post page
 
 11. Create posts 
-  > https://ashleemboyer.com/react-firebase-blog-03 
+

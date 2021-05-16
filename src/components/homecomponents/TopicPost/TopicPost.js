@@ -2,7 +2,7 @@ import React from 'react'
 import './TopicPost.css'
 import { Link } from 'react-router-dom'
 import { useGlobalContext } from '../../../context'
-function TopicPost({ coverImage, title, author, authimg, content }) {
+function TopicPost({ coverImage, title, author, authorImage, content }) {
   const { attachName } = useGlobalContext();
   const linkName=attachName(title);
   return (
@@ -15,7 +15,7 @@ function TopicPost({ coverImage, title, author, authimg, content }) {
         <p className="tp-text">{content.substring(0,150)}...</p>
         <div className="author-container">
           <div className="author-image-container">
-            <img src={authimg} alt={author}/>
+            <img src={authorImage} alt={author}/>
           </div> 
           
           <p>{author}</p>

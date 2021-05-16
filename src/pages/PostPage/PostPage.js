@@ -29,7 +29,7 @@ function PostPage() {
   if (!post){
     return <h2>No posts</h2>
   } else {
-    const { coverImage, title, date, author, authimg, content } = post;
+    const { coverImage, title, date, author, authorImage, content } = post;
     return (
       <section className="subpage-container" onClick={handleOutsideClick}>
         <div className="max-width">
@@ -48,7 +48,7 @@ function PostPage() {
                 <p>{date}</p>
                 <div className="postpage-author-container">
                   <div className="postpage-author-image-container">
-                    <img src={authimg} alt={author}/>
+                    <img src={authorImage} alt={author}/>
                   </div>
                   <p>{author}</p>
                 </div>

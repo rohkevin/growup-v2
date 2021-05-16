@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useGlobalContext } from '../../context'
 
-function TopicPagePost({ coverImage, title, date, author, authimg, content }) {
+function TopicPagePost({ coverImage, title, date, author, authorImage, content }) {
   const { attachName } = useGlobalContext();
   const [windowSize, setWindowSize] = useState(window.innerWidth);
   const checkSize = () => {
@@ -30,7 +30,7 @@ function TopicPagePost({ coverImage, title, date, author, authimg, content }) {
         </div>
         <div className="topic-page-author-container">
           <div className="topic-page-author-image-container">
-            <img src={authimg} alt={author}/>
+            <img src={authorImage} alt={author}/>
           </div>
           
           <p>{author}</p>
