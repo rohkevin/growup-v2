@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import '../LoginModal.css'
 
 function LoginMessage({ type, msg, removeAlert }) {
   useEffect(()=>{

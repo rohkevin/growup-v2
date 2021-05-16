@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import './Home.css'
 import { useGlobalContext } from '../../context'
 import { Link } from 'react-router-dom'
 import { topics } from '../../data'

@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react'
+import '../LoginModal.css'
 import { Link } from 'react-router-dom'
 import { useGlobalContext } from '../../../context'
 import { useAuth } from '../../../AuthContext'

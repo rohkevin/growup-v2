@@ -1,4 +1,5 @@
 import React from 'react'
+import './TopicTopPosts.css'
 import { Link } from 'react-router-dom'
 import { useGlobalContext } from '../../../context'
 function TopicTopPost({ id, index, url, coverImage, title }) {

@@ -1,4 +1,5 @@
 import React, { useRef, useEffect } from 'react'
+import './Searchbar.css'
 import { FaSearch, FaTimes } from 'react-icons/fa';
 import { useGlobalContext } from '../../context'
 

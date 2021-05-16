@@ -1,4 +1,5 @@
 import React from 'react'
+import './Navbar.css'
 import { useGlobalContext } from '../../context'
 import { useAuth } from '../../AuthContext'
 import { FaBars } from 'react-icons/fa'

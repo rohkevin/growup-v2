@@ -1,0 +1,127 @@
+/* 
+***************************
+===========================
+========== HOME ===========
+===========================
+***************************
+*/
+main{
+  width: 100vw;
+  height: 100%;
+  display: grid;
+  justify-items: center;
+  background-color: var(--background-color);
+}
+.max-width{
+  width: 100%;
+  max-width: var(--max-page-width);
+}
+.home-container{
+  margin-bottom: 1rem;
+  width: 100%;
+  display: grid;
+  justify-items: center;
+}
+
+.home-header{
+  font-size: 1.4rem;
+  margin: 0 var(--page-side-padding);
+  justify-self: left;
+}
+.ad-container{
+  width: 100%;
+  height: 5rem;
+  margin: 1rem 0;
+  padding: 0 var(--page-side-padding);
+  border: 1px solid;
+}
+.featured-container{
+  padding: 1rem var(--page-side-padding);
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+.post-container{
+  width: 100%;
+  background-color: var(--nav-color);
+  border-radius: 3px;
+  box-shadow: 0px 5px 15px var(--light-shadow-color);
+}
+.post-image{
+  position: relative;
+  width: 100%;
+  max-height: 300px;
+  overflow: hidden;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  z-index: 0;
+}
+.post-image img{
+  display: block;
+  max-width: 100%;
+  width: 100%;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  transform: scale(1);
+}
+.post-container:hover .post-image img{
+  transform: scale(1.05);
+}
+.text-container{
+  padding: 1rem 0.5rem;
+}
+.post-date{
+  margin: 0.5rem 0;
+  font-size: 0.75rem;
+  color: var(--dark-font-color);
+}
+.post-title{
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+.author-container{
+  margin: 0.5rem 0;
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+.author-image-container{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+.author-image-container img{
+  object-fit: cover;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.author-container p{
+  font-size: 0.875rem;
+}
+
+@media screen and (min-width: 800px){
+  .home-header{
+    margin: 0;
+  }
+  .featured-container{
+    grid-template-columns: 1fr 1fr;
+    padding: 1rem 0;
+  }
+  .ad-type-1{
+    width: 920px;
+    height: 250px;
+    margin: 2rem 0;
+  }
+  .ad-type-2{
+    width: 920px;
+    height: 125px;
+  }
+  .home-header{
+    font-size: 2rem;
+  }
+}

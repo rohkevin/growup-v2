@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import './Sidenav.css'
 import { useGlobalContext } from '../../context'
 import { FaTimes, FaChevronRight } from 'react-icons/fa'
 import { Link } from 'react-router-dom'

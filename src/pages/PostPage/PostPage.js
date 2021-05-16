@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react'
+import './PostPage.css'
+
 import { useGlobalContext } from '../../context'
 import { useParams } from 'react-router-dom'
 
