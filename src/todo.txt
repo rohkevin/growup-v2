@@ -35,10 +35,13 @@ TO DO LIST
   > Simple useState and filter
   > Appearance like topic page, header "Search for: SEARCHTERM"
 
-10. Author Image 
-  x> Home page - Featured posts, Topic posts
-  x> Topic page
-  x> Topic post page
 
 11. Create posts 
 
+==========================================================================
+COMPLETE
+==========================================================================
+x10. Author Image 
+  x> Home page - Featured posts, Topic posts
+  x> Topic page
+  x> Topic post page

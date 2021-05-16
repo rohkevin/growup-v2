@@ -46,6 +46,9 @@
 .search-btn svg{
   color: var(--dark-shadow-color);
 }
+.search-bar:focus, .show-search-box:focus, .search-input:focus .show-search:focus {
+  outline: none;
+}
 @media screen and (min-width: 600px){
   .search-input {
     max-width: 150px;

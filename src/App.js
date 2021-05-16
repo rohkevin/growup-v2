@@ -17,6 +17,7 @@ import About from './pages/About/About'
 import Error from './pages/Error/Error'
 import PasswordReset from './pages/PasswordReset/PasswordReset'
 import UpdateProfile from './pages/UpdateProfile/UpdateProfile'
+import SearchPage from './pages/SearchPage/SearchPage'
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -43,6 +44,7 @@ function App() {
           <PrivateRoute exact path="/write" component={NewStory}/>
           <Route path="/auth/reset" component={PasswordReset}/>
           <PrivateRoute path="/update-profile" component={UpdateProfile}/>
+          <Route exact path="/search?q=:searchTerm" component={SearchPage}/>
           <Route path="*" component={Error}/>
         </Switch>
         <Footer/>

@@ -15,6 +15,7 @@ function AppProvider({ children }) {
   const [loginLocation, setLoginLocation] = useState({});
   const [loginAlert, setLoginAlert] = useState({show: false, type: '', msg: ''});
   const [blogPosts, setBlogPosts] = useState();
+  const [searchTerm, setSearchTerm] = useState(null);
 
   useEffect(() => {
     setIsLoading(true);
@@ -78,30 +79,18 @@ function AppProvider({ children }) {
   return (
     <AppContext.Provider
       value={{
-        isLoading,
-        setIsLoading,
-        sideNavOpen,
-        setSideNavOpen,
+        isLoading, setIsLoading,
+        sideNavOpen, setSideNavOpen,
         toggleMenu,
-        showSearch,
-        setShowSearch,
-        toggleSearch,
+        showSearch, setShowSearch, toggleSearch, searchTerm, setSearchTerm,
         blogPosts,
         handleOutsideClick,
         attachName,
-        loginModalOpen,
-        setLoginModalOpen,
-        toggleLoginModal,
-        closeLoginModal,
-        loggedinModalOpen,
-        setLoggedinModalOpen,
-        toggleLoggedInModal,
-        loginLocation,
-        setLoginLocation,
-        showSignup,
-        setShowSignup,
-        showAlert,
-        loginAlert,
+        loginModalOpen, setLoginModalOpen, toggleLoginModal, closeLoginModal,
+        loggedinModalOpen, setLoggedinModalOpen, toggleLoggedInModal,
+        loginLocation, setLoginLocation,
+        showSignup, setShowSignup,
+        showAlert, loginAlert,
       }}
     >
       { children } 

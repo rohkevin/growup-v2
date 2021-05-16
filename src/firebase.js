@@ -2,7 +2,7 @@ import firebase from "firebase/app"
 import "firebase/auth"
 // import "firebase/database"
 import "firebase/firestore"
-import * as admin from "firebase-admin"
+// import * as admin from "firebase-admin"
 
 export const googleProvider = new firebase.auth.GoogleAuthProvider();
 
