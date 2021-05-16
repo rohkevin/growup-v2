@@ -6,25 +6,17 @@ import { useGlobalContext } from '../../context'
 
 function Searchbar() {
   const { showSearch, toggleSearch, searchTerm, setSearchTerm } =  useGlobalContext();
-  const searchBox = useRef('');
+  // const searchBox = useRef('');
 
   let history = useHistory();
 
-  useEffect(()=>{
-    searchBox.current.focus();
-  },[showSearch]);
-
   const closeSearch = () => {
     toggleSearch();
-    searchBox.current.value="";
+    setSearchTerm('')
   }
   const handleSubmit = (e) => {
     e.preventDefault();
-    let newSearch = searchBox.current.value;
-    setSearchTerm(newSearch);
-    history.push(`/search?q=${newSearch}`);
-
-
+    history.push(`/search?q=${searchTerm}`);
   }
   return (
     <form onSubmit={handleSubmit} className="tempform">
@@ -32,7 +24,8 @@ function Searchbar() {
         <input 
           type="text"
           className={`${showSearch ? 'show-search search-input' : 'search-input'}`}
-          ref={searchBox}
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
         />
         {
           showSearch ? 

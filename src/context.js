@@ -15,7 +15,7 @@ function AppProvider({ children }) {
   const [loginLocation, setLoginLocation] = useState({});
   const [loginAlert, setLoginAlert] = useState({show: false, type: '', msg: ''});
   const [blogPosts, setBlogPosts] = useState();
-  const [searchTerm, setSearchTerm] = useState(null);
+  const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
     setIsLoading(true);
@@ -25,7 +25,6 @@ function AppProvider({ children }) {
         id: doc.id,
         ...doc.data()
       }));
-      console.log(posts);
       setBlogPosts(posts);
     })
 
