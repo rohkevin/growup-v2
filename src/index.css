@@ -68,7 +68,9 @@ body {
 .display-none{
   display: none;
 }
-
+*:focus {
+  outline: none;
+}
 
 
 
