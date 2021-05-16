@@ -16,26 +16,6 @@ function AppProvider({ children }) {
   const [loginAlert, setLoginAlert] = useState({show: false, type: '', msg: ''});
   const [blogPosts, setBlogPosts] = useState();
 
-  // useEffect(()=>{
-  //   setIsLoading(true);
-  //   app.database()
-  //   .ref("/posts")
-  //   .once("value")
-  //   .then(snapshot => {
-      
-  //     let posts = [];
-  //     const snapshotValue = snapshot.val();
-  //     for (let postID in snapshotValue){
-  //       let parsedDate = Date.parse(snapshotValue[postID].dateFormatted);
-  //       snapshotValue[postID].dateFormatted = parsedDate;
-  //       posts.push(snapshotValue[postID])
-  //     }
-  //     const sortByDate = posts.sort((a,b) => b.dateFormatted - a.dateFormatted);
-  //     setBlogPosts(sortByDate);
-  //     setIsLoading(false);
-  //   })
-  // },[])
-
   useEffect(() => {
     setIsLoading(true);
 
@@ -77,8 +57,9 @@ function AppProvider({ children }) {
       closeLoggedinModal();
     }
   }
+  // Replace whitespace, commas, periods, questionmarks, exclamationmarks
   const attachName = (str) => {
-    return str.replace(/\s/g, '').replace(/,/g,'').replace(/\./g,'')
+    return str.replace(/\s/g, '').replace(/,/g,'').replace(/\./g,'').replace(/\?/g,'').replace(/\!/g,'');
   }
   const toggleLoginModal = ()=>{
     setLoginModalOpen(!loginModalOpen);
