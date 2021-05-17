@@ -1,7 +1,7 @@
 import React, {useState, useEffect, useRef} from 'react'
 import './NewStory.css'
 import { useHistory } from 'react-router-dom'
-import app from '../../firebase'
+import app, { db } from '../../firebase'
 import { topics } from '../../data'
 import { useGlobalContext } from '../../context'
 import { useAuth } from '../../AuthContext'
@@ -134,11 +134,13 @@ function NewStory() {
 
     if (id !== "" && date !== "" && title !== "" && topic !== "" && content !== "" && coverImage !== "" && author !== "" && authorImage !== "") {
       console.log(newPost);
-      // handlesubmit
+      handleSubmit();
     }
   }
 
   const handleSubmit = () => {
+
+    db.collection("posts").doc(newPost.id).set(newPost);
     
     // app
     //   .database()
