@@ -4,16 +4,8 @@ TO DO LIST
 
 *** HIGH PRIORITY ***
 
-1. Write to Firebase
-  > Authenticate inputs
-    - Image src needs to be image (see img src onerror)
-
 7. Firebase 
   > Change to auth-production which disables localhost:3000
-
-8. Subscribe button
-  > Submits email to database (separate JSON tree)
-
 
 *** MEDIUM PRIORITY ***
 
@@ -40,17 +32,26 @@ TO DO LIST
 6. Unique blog posts
   > Change blog post contents and pics
 
+8. Subscribe button
+  > Submits email to database (separate JSON tree)
+
 11. Create posts 
+
+12. Authenticate post write inputs
+  > Image src needs to be image (see img src onerror)
+  > Error user if fields not input
 
 ==========================================================================
 COMPLETE
 ==========================================================================
 
+1. Write to Firebase
+
 9. Searchbar functionality
   > Simple useState and filter
   > Appearance like topic page, header "Search for: SEARCHTERM"
-  
+
 x10. Author Image 
-  x> Home page - Featured posts, Topic posts
-  x> Topic page
-  x> Topic post page
+  > Home page - Featured posts, Topic posts
+  > Topic page
+  > Topic post page
