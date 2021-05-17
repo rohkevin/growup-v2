@@ -14,12 +14,14 @@ function NewStory() {
 
   const [selected, setSelected] = useState(false);
   const [coverImage, setCoverImage] = useState("");
+  const [id, setId] = useState("");  
   const [title, setTitle] = useState("");  
   const [topic, setTopic] = useState("");
+  const [date, setDate] = useState("");
   const [content, setContent] = useState("");
-  const [author, setAuthor] = useState(null);
-  const [authorImage, setAuthorImage] = useState(null);
-  const [post, setPost] = useState(null);
+  const [author, setAuthor] = useState("");
+  const [authorImage, setAuthorImage] = useState("");
+  const [newPost, setNewPost] = useState(null);
 
   const history = useHistory();
 
@@ -64,15 +66,17 @@ function NewStory() {
   }
   const generateID = () => {
     let highestID = 0;
-    blogPosts.forEach((post)=>{
-      let currentID = post.id;
-      let currentIDnum = parseInt(currentID.replace("postID", ""));
-      if (currentIDnum > highestID){
-        highestID = currentIDnum;
-      }
-    })
-    const newID = `postID${highestID+1}`;
-    return newID;
+    if (blogPosts){
+      blogPosts.forEach((post)=>{
+        let currentID = post.id;
+        let currentIDnum = parseInt(currentID.replace("postID", ""));
+        if (currentIDnum > highestID){
+          highestID = currentIDnum;
+        }
+      })
+      const newID = `postID${highestID+1}`;
+      return newID;
+    }
   } 
 
   const generateDate = () => {
@@ -100,52 +104,50 @@ function NewStory() {
     let extension = parts[parts.length-1]; 
   }
 
-  const getAuthor = () => {
-    const currentAuthor = currentUser.email;
-    const currentAuthorImage = currentUser.photoURL;
-    setAuthor(currentAuthor);
-    setAuthorImage(currentAuthorImage);
-  }
-
+  // useEffect for creating post
   useEffect(() => {
-    
-
-    if (title && topic && content && author && authorImage) {
-      const id = generateID();
-      const date = generateDate();
-      const newPost = {
-        id,
-        coverImage,
-        title,
-        topic,
-        dateFormatted: date.formatted,
-        datePretty: date.pretty,
-        content,
-        author,
-        authorImage
-      }
-      setPost(newPost);
+    const post = {
+      id,
+      coverImage,
+      title,
+      topic,
+      dateFormatted: date.formatted,
+      datePretty: date.pretty,
+      content,
+      author,
+      authorImage
     }
-
-  }, [coverImage, title, topic, content, author, authorImage])
+    setNewPost(post);
+  }, [id, date, title, topic, content, coverImage, author, authorImage])
 
   const createPost = (e) => {
     e.preventDefault();
-
+    const newId = generateID();
+    setId(newId);
+    const newDate = generateDate();
+    setDate(newDate);
+    setAuthor(currentUser.displayName);
+    setAuthorImage(currentUser.photoURL);
     if (coverImage === "") {
       setCoverImage("https://picsum.photos/800/600");
     }
-    
-    if (post) {
-      console.log(post);
-    }
 
+    if (id !== "" && date !== "" && title !== "" && topic !== "" && content !== "" && coverImage !== "" && author !== "" && authorImage !== "") {
+      console.log(newPost);
+      // handlesubmit
+    }
+  }
+
+  const handleSubmit = () => {
+    
     // app
     //   .database()
     //   .ref()
     //   .child(`posts/${id}`)
     //   .set(newPost)
     //   .then(()=>history.push("/"));
+
+    // Empty fields
   }
 
   return (
