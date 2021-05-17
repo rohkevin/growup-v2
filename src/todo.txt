@@ -14,9 +14,6 @@ TO DO LIST
 8. Subscribe button
   > Submits email to database (separate JSON tree)
 
-9. Searchbar functionality
-  > Simple useState and filter
-  > Appearance like topic page, header "Search for: SEARCHTERM"
 
 *** MEDIUM PRIORITY ***
 
@@ -48,6 +45,11 @@ TO DO LIST
 ==========================================================================
 COMPLETE
 ==========================================================================
+
+9. Searchbar functionality
+  > Simple useState and filter
+  > Appearance like topic page, header "Search for: SEARCHTERM"
+  
 x10. Author Image 
   x> Home page - Featured posts, Topic posts
   x> Topic page

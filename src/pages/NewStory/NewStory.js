@@ -1,28 +1,30 @@
 import React, {useState, useEffect, useRef} from 'react'
 import './NewStory.css'
 import { useHistory } from 'react-router-dom'
-import { useForm } from 'react-hook-form'
 import app from '../../firebase'
 import { topics } from '../../data'
 import { useGlobalContext } from '../../context'
+import { useAuth } from '../../AuthContext'
 
 import CreatePostError from '../../components/CreatePostError/CreatePostError'
 
 function NewStory() {
   const titleRef = useRef();
   const contentRef = useRef();
+
   const [selected, setSelected] = useState(false);
-  const [id, setID] = useState("");
   const [coverImage, setCoverImage] = useState("");
   const [title, setTitle] = useState("");  
   const [topic, setTopic] = useState("");
   const [content, setContent] = useState("");
-
-  const { register, handleSubmit } = useForm()
+  const [author, setAuthor] = useState(null);
+  const [authorImage, setAuthorImage] = useState(null);
+  const [post, setPost] = useState(null);
 
   const history = useHistory();
 
   const { blogPosts } = useGlobalContext();
+  const { currentUser } = useAuth();
 
   const getPageSize = () => {
     var scrollLeft = window.pageXOffset ||
@@ -91,34 +93,59 @@ function NewStory() {
       pretty: now.toLocaleDateString("en-US", options)
     }
   }
+  
   const checkValidURL = (url) => {
     let imageTypes = ["jpg", "jpeg", "png", "gif", "bmp", "tiff"];
     let parts = url.split('.');
-    let extension = parts[parts.length-1];
-    
+    let extension = parts[parts.length-1]; 
   }
+
+  const getAuthor = () => {
+    const currentAuthor = currentUser.email;
+    const currentAuthorImage = currentUser.photoURL;
+    setAuthor(currentAuthor);
+    setAuthorImage(currentAuthorImage);
+  }
+
+  useEffect(() => {
+    
+
+    if (title && topic && content && author && authorImage) {
+      const id = generateID();
+      const date = generateDate();
+      const newPost = {
+        id,
+        coverImage,
+        title,
+        topic,
+        dateFormatted: date.formatted,
+        datePretty: date.pretty,
+        content,
+        author,
+        authorImage
+      }
+      setPost(newPost);
+    }
+
+  }, [coverImage, title, topic, content, author, authorImage])
+
   const createPost = (e) => {
     e.preventDefault();
-    const id = generateID();
-    const date = generateDate();
-    if (!coverImage) {
+
+    if (coverImage === "") {
       setCoverImage("https://picsum.photos/800/600");
     }
-    const newPost = {
-      id,
-      coverImage,
-      title,
-      topic,
-      dateFormatted: date.formatted,
-      datePretty: date.pretty,
-      content
+    
+    if (post) {
+      console.log(post);
     }
-    app
-      .database()
-      .ref()
-      .child(`posts/${id}`)
-      .set(newPost)
-      .then(()=>history.push("/"));
+
+    // app
+    //   .database()
+    //   .ref()
+    //   .child(`posts/${id}`)
+    //   .set(newPost)
+    //   .then(()=>history.push("/"));
   }
 
   return (
@@ -188,6 +215,7 @@ function NewStory() {
                 setCoverImage(e.target.value);
               }}
             />
+
             <button type="submit" className="write-btn" onClick={createPost}>Submit</button>
           </form>
         </div>
