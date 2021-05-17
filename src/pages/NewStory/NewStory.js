@@ -133,23 +133,30 @@ function NewStory() {
     }
 
     if (id !== "" && date !== "" && title !== "" && topic !== "" && content !== "" && coverImage !== "" && author !== "" && authorImage !== "") {
-      console.log(newPost);
       handleSubmit();
     }
   }
 
   const handleSubmit = () => {
 
-    db.collection("posts").doc(newPost.id).set(newPost);
+    db.collection("posts").doc(newPost.id).set(newPost)
+    .then(function(docRef){
+      // Change this to alert React component
+      alert('Post added successfully')
+      setId("");
+      setDate("");
+      setTitle("");
+      setTopic("");
+      setContent("");
+      setCoverImage("");
+      setAuthor(""); 
+      setAuthorImage("");
+    })
+    .catch(function(error) {
+      // Change this to alert React component
+      alert('Post was not added, please check fields')
+    });
     
-    // app
-    //   .database()
-    //   .ref()
-    //   .child(`posts/${id}`)
-    //   .set(newPost)
-    //   .then(()=>history.push("/"));
-
-    // Empty fields
   }
 
   return (
