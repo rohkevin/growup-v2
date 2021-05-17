@@ -28,7 +28,8 @@ function AppProvider({ children }) {
         id: doc.id,
         ...doc.data()
       }));
-      setBlogPosts(posts);
+      const reversed = posts.reverse();
+      setBlogPosts(reversed);
     })
 
     setIsLoading(false);
