@@ -1,7 +1,7 @@
 {
   "posts": {
     "postID1": {
-      "id": "postID1",
+      "id": "postID01",
       "coverImage": "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1651&q=80",
       "title": "How to budget your finances after university",
       "topic": "finance",
@@ -12,7 +12,7 @@
       "authorImage": "https://i1.sndcdn.com/artworks-000371233842-86xe3v-t500x500.jpg"
     },
     "postID2": {
-      "id": "postID2",
+      "id": "postID02",
       "coverImage": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1602&q=80",
       "title": "3 Tips on starting to invest",
       "topic": "finance",
@@ -23,7 +23,7 @@
       "authorImage": "https://i1.sndcdn.com/artworks-000371233842-86xe3v-t500x500.jpg"
     },
     "postID3": {
-      "id": "postID3",
+      "id": "postID03",
       "coverImage": "https://images.unsplash.com/photo-1427751840561-9852520f8ce8?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1655&q=80",
       "title": "Investments or paying off loans? Find out what you should do",
       "topic": "finance",
@@ -34,7 +34,7 @@
       "authorImage": "https://i1.sndcdn.com/artworks-000371233842-86xe3v-t500x500.jpg"
     },
     "postID4": {
-      "id": "postID4",
+      "id": "postID04",
       "coverImage": "https://images.unsplash.com/photo-1532635241-17e820acc59f?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1603&q=80",
       "title": "Fun patios to checkout if you're uptown Toronto",
       "topic": "social",
@@ -45,7 +45,7 @@
       "authorImage": "https://i1.sndcdn.com/artworks-000371233842-86xe3v-t500x500.jpg"
     },
     "postID5": {
-      "id": "postID5",
+      "id": "postID05",
       "coverImage": "https://images.unsplash.com/photo-1543269865-4430f94492b9?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80",
       "title": "How to make small talk with anyone",
       "topic": "social",
@@ -56,7 +56,7 @@
       "authorImage": "https://i1.sndcdn.com/artworks-000371233842-86xe3v-t500x500.jpg"
     },
     "postID6": {
-      "id": "postID6",
+      "id": "postID06",
       "coverImage": "https://images.unsplash.com/photo-1459180129673-eefb56f79b45?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1652&q=80",
       "title": "Being lost in your 20s",
       "topic": "career",
@@ -67,7 +67,7 @@
       "authorImage": "https://i1.sndcdn.com/artworks-000371233842-86xe3v-t500x500.jpg"
     },
     "postID7": {
-      "id": "postID7",
+      "id": "postID07",
       "coverImage": "https://images.unsplash.com/photo-1489533119213-66a5cd877091?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1651&q=80",
       "title": "How to initiate coffee chats and grow your network",
       "topic": "career",
@@ -79,7 +79,7 @@
       "authorImage": "https://i1.sndcdn.com/artworks-000371233842-86xe3v-t500x500.jpg"
     },
     "postID8": {
-      "id": "postID8",
+      "id": "postID08",
       "coverImage": "https://images.unsplash.com/photo-1425913397330-cf8af2ff40a1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1567&q=80",
       "title": "Gorgeous hikes near Toronto that you probably didn't know existed",
       "topic": "health",
@@ -90,7 +90,7 @@
       "authorImage": "https://i1.sndcdn.com/artworks-000371233842-86xe3v-t500x500.jpg"
     },
     "postID9": {
-      "id": "postID9",
+      "id": "postID09",
       "coverImage": "https://images.unsplash.com/photo-1605565348518-bef3e7d6fed8?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1655&q=80",
       "title": "How is working from home affecting our health?",
       "topic": "health",
