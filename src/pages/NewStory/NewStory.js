@@ -215,6 +215,7 @@ function NewStory() {
                 setContent(e.target.value);
               }}
             />
+            
 
             {/*
             Currently using img URL to upload images, or randomly generating through Lorem Picsum web generator 

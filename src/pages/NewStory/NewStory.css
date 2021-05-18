@@ -20,6 +20,7 @@
   padding: 4rem 2rem;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 }
 .topic-select{
   margin-bottom: 2rem;
