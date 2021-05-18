@@ -19,8 +19,8 @@ var db = firebase.firestore();
 db.collection("posts").get().then(function(querySnapshot) {
   querySnapshot.forEach(function(doc){
     doc.ref.update({
-      // author: "Most Palone",
-      // authorImage: "https://i1.sndcdn.com/artworks-000371233842-86xe3v-t500x500.jpg"
+      author: "Most Palone",
+      authorImage: "https://i1.sndcdn.com/artworks-000371233842-86xe3v-t500x500.jpg"
     })
   })
 })

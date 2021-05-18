@@ -184,7 +184,7 @@ var blogPostsJSON = [
   },
   {
     "id": "postID16",
-    "coverImage": "https://images.unsplash.com/photo-1532712938310-34cb3982ef74?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80",
+    "coverImage": "https://images.unsplash.com/photo-1505150099521-fde7970bcc3a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80",
     "title": "What it means to find someone",
     "topic": "social",
     "dateFormatted": "2021-03-12",
