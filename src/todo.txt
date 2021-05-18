@@ -13,7 +13,8 @@ TO DO LIST
 3. Update profile page/settings allows image upload and name change
 
 4. Authorized users only able to access Write component
-  > Currently set up using Rules for Firestore write access
+  > Currently set up using Rules for Firestore write access (UPDATE: Changing write acces denies page from loading, removed this rule)
+  > TEMPFIX: NewStory determines currentUser and my email
   
   > Firebase Admin SDK install
   > https://www.youtube.com/watch?v=WtYzHTXHBp0&list=PLnepGR_yu2ekWVHK_PEXGBv3TxFDOrSLs

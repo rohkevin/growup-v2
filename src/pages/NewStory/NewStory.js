@@ -134,24 +134,29 @@ function NewStory() {
   }
 
   const handleSubmit = () => {
+    if (currentUser.email !== 'kevinrohmail@gmail.com') {
+      alert('You currently do not have access rights')
+    } else {
+      db.collection("posts").doc(newPost.id).set(newPost)
+      .then(function(docRef){
+        // Change this to alert React component
+        alert('Post added successfully')
+        setId("");
+        setDate("");
+        setTitle("");
+        setTopic("");
+        setContent("");
+        setCoverImage("");
+        setAuthor(""); 
+        setAuthorImage("");
+      })
+      .catch(function(error) {
+        // Change this to alert React component
+        alert('Post was not added, please check fields')
+      });
 
-    db.collection("posts").doc(newPost.id).set(newPost)
-    .then(function(docRef){
-      // Change this to alert React component
-      alert('Post added successfully')
-      setId("");
-      setDate("");
-      setTitle("");
-      setTopic("");
-      setContent("");
-      setCoverImage("");
-      setAuthor(""); 
-      setAuthorImage("");
-    })
-    .catch(function(error) {
-      // Change this to alert React component
-      alert('Post was not added, please check fields')
-    });
+    }
+
     
   }
 
