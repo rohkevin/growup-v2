@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { useLocation } from 'react-router';
-import { db, app } from './firebase'
+import { db } from './firebase'
 
 
 const AppContext = React.createContext();

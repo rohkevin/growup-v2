@@ -1,12 +1,9 @@
 import React, {useState, useEffect, useRef} from 'react'
 import './NewStory.css'
-import { useHistory } from 'react-router-dom'
-import app, { db } from '../../firebase'
+import { db } from '../../firebase'
 import { topics } from '../../data'
 import { useGlobalContext } from '../../context'
 import { useAuth } from '../../AuthContext'
-
-import CreatePostError from '../../components/CreatePostError/CreatePostError'
 
 function NewStory() {
   const titleRef = useRef();
@@ -22,8 +19,6 @@ function NewStory() {
   const [author, setAuthor] = useState("");
   const [authorImage, setAuthorImage] = useState("");
   const [newPost, setNewPost] = useState(null);
-
-  const history = useHistory();
 
   const { blogPosts } = useGlobalContext();
   const { currentUser } = useAuth();
@@ -98,11 +93,12 @@ function NewStory() {
     }
   }
   
-  const checkValidURL = (url) => {
-    let imageTypes = ["jpg", "jpeg", "png", "gif", "bmp", "tiff"];
-    let parts = url.split('.');
-    let extension = parts[parts.length-1]; 
-  }
+  // Implement URL check
+  // const checkValidURL = (url) => {
+  //   let imageTypes = ["jpg", "jpeg", "png", "gif", "bmp", "tiff"];
+  //   let parts = url.split('.');
+  //   let extension = parts[parts.length-1]; 
+  // }
 
   // useEffect for creating post
   useEffect(() => {

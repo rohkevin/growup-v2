@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import './PasswordReset.css'
 import { Link } from 'react-router-dom'
 import { useGlobalContext } from '../../context'
@@ -7,7 +7,7 @@ import LoginMessage from '../../components/logincomponents/LoginMessage/LoginMes
 
 function PasswordReset() {
   const { closeLoginModal, toggleLoginModal, setShowSignup, showAlert, loginAlert } = useGlobalContext();
-  const { resetPassword, setAuthLoading } = useAuth();
+  const { resetPassword } = useAuth();
   useEffect(()=> {
     closeLoginModal();
   }, [])

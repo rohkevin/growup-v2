@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { BrowserRouter as Router, Redirect, Route, Switch, useLocation } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch, useLocation } from 'react-router-dom'
 import PrivateRoute from './PrivateRoute'
 
 import Navbar from './components/Navbar/Navbar'
@@ -18,7 +18,6 @@ import Error from './pages/Error/Error'
 import PasswordReset from './pages/PasswordReset/PasswordReset'
 import UpdateProfile from './pages/UpdateProfile/UpdateProfile'
 import SearchPage from './pages/SearchPage/SearchPage'
-import { useGlobalContext } from './context'
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -29,7 +28,6 @@ function ScrollToTop() {
 }
 
 function App() {
-  const { searchTerm } = useGlobalContext();
   return (
     <Router>
       <ScrollToTop/>

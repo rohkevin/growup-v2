@@ -7,7 +7,7 @@ import LoginMessage from '../../components/logincomponents/LoginMessage/LoginMes
 
 function UpdateProfile() {
   const { showAlert, loginAlert } = useGlobalContext();
-  const { currentUser, updateEmail, updatePassword, setAuthLoading } = useAuth();
+  const { currentUser, updateEmail, updatePassword } = useAuth();
   
   const history = useHistory();
   

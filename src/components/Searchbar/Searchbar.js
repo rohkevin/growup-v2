@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react'
+import React from 'react'
 import './Searchbar.css'
 import { useHistory } from 'react-router-dom';
 import { FaSearch, FaTimes } from 'react-icons/fa';

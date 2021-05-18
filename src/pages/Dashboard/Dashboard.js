@@ -1,7 +1,5 @@
 import React from 'react'
-import { useAuth } from '../../AuthContext'
 function Dashboard() {
-  const { currentUser } = useAuth();
   return (
     <section className="subpage-container">
       <div className="max-width">

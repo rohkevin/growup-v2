@@ -73,6 +73,7 @@ function Home() {
                           index+=1;
                           return <TopicTopPost key={id} index={index} {...post} />
                         }
+                        return null;
                       })
                     }
                     </div>
