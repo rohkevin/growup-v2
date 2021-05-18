@@ -124,18 +124,22 @@ function NewStory() {
     setDate(newDate);
     setAuthor(currentUser.displayName);
     setAuthorImage(currentUser.photoURL);
+    // All temp images are the same, picsum generator changes image all the time. Need a fix for this.
     if (coverImage === "") {
-      setCoverImage("https://picsum.photos/800/600");
+      const tempImage = "https://i.picsum.photos/id/590/800/600.jpg?hmac=PzlUp5EJsbkfQN8Ke2gZU4XAinf7_koNZR8zQsoJks0";
+      setCoverImage(tempImage);
     }
 
     if (id !== "" && date !== "" && title !== "" && topic !== "" && content !== "" && coverImage !== "" && author !== "" && authorImage !== "") {
       handleSubmit();
+    } else {
+      alert('Try submitting again after filling fields');
     }
   }
 
   const handleSubmit = () => {
     if (currentUser.email !== 'kevinrohmail@gmail.com') {
-      alert('You currently do not have access rights')
+      alert(`You currently do not have access rights as ${currentUser.email}`)
     } else {
       db.collection("posts").doc(newPost.id).set(newPost)
       .then(function(docRef){

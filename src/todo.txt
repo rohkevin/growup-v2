@@ -41,9 +41,12 @@ TO DO LIST
 
 11. Create posts 
 
-12. Authenticate post write inputs
+12. Verify post write inputs
   > Image src needs to be image (see img src onerror)
   > Error user if fields not input
+
+13. Template photo for new posts
+  > Currently it is a default link, need to change this to a random generator
 
 ==========================================================================
 COMPLETE
