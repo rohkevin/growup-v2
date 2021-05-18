@@ -12,13 +12,15 @@ TO DO LIST
 3. Update profile page/settings allows image upload and name change
 
 4. Authorized users only able to access Write component
+  > Currently set up using Rules for Firestore write access
+  
   > Firebase Admin SDK install
   > https://www.youtube.com/watch?v=WtYzHTXHBp0&list=PLnepGR_yu2ekWVHK_PEXGBv3TxFDOrSLs
   > Set Firebase admin levels
   > https://www.youtube.com/watch?v=3hj_r_N0qMs
   > https://firebase.google.com/docs/admin/setup?authuser=0
   > Private key is located inside private folder of this project
-
+  
 
 *** LOW PRIORITY ***
 
