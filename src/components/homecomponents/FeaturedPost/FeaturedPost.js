@@ -1,7 +1,8 @@
 import React from 'react'
+import './FeaturedPost.css'
 import { Link } from 'react-router-dom'
 import { useGlobalContext } from '../../../context'
-function FeaturedPost({ id, url, coverImage, title, date, author, authorImage }) {
+function FeaturedPost({ id, url, coverImage, title, datePretty, author, authorImage }) {
   const { attachName } = useGlobalContext();
   const linkName=attachName(title);
   return (
@@ -10,7 +11,8 @@ function FeaturedPost({ id, url, coverImage, title, date, author, authorImage })
         <img src={coverImage} alt={title}></img>
       </div>
       <div className="text-container">
-        <p className="post-date">{date}</p>
+        <p className="post-date">{datePretty}</p>
+        {console.log(datePretty)}
         <h2 className="post-title">{title}</h2>
         <div className="author-container">
           <div className="author-image-container">
