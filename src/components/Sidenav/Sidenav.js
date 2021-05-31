@@ -40,7 +40,7 @@ function Sidenav() {
               social.map((link)=>{
                 const { id, url, icon } = link;
                 return (
-                  <a key={id} href={url} target="_blank" rel="noreferrer" className="social-icon">{icon}</a>
+                  <a key={id} href={url} target="_blank" rel="noreferrer" className="social-icon" aria-label={`link to ${icon}`}>{icon}</a>
                 )
               })
             }
