@@ -15,14 +15,12 @@ function UpdateProfile() {
   const passwordRef = useRef();
   const passwordConfirmationRef = useRef();
   
-  const handleSubmit = (e) => {
-    // e.preventDefault();
+  const handleSubmit = () => {
     if (passwordRef.current.value !== passwordConfirmationRef.current.value) {
       return showAlert(true, 'failure', 'Passwords do not match!');
     }
 
     const promises = [];
-    // setAuthLoading(true);
     if (emailRef.current.value !== currentUser.email) {
       promises.push(updateEmail(emailRef.current.value))
     }
@@ -68,8 +66,8 @@ function UpdateProfile() {
           ref={passwordConfirmationRef}
           placeholder="Leave blank to keep the same"
         />
-        <button type="submit" className="pw-reset-btn">Update</button>
-        <Link to="/dashboard" className="pw-reset-signup-link">Go Back</Link>
+        <button type="submit" className="pw-reset-btn" aria-label="Update profile button">Update</button>
+        <Link to="/dashboard" className="pw-reset-signup-link" aria-label="Go back to dashboard button">Go Back</Link>
       </form>
     </section>
   )

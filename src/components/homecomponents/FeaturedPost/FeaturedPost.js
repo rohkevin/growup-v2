@@ -2,7 +2,7 @@ import React from 'react'
 import './FeaturedPost.css'
 import { Link } from 'react-router-dom'
 import { useGlobalContext } from '../../../context'
-function FeaturedPost({ id, url, coverImage, title, datePretty, author, authorImage }) {
+function FeaturedPost({ coverImage, title, datePretty, author, authorImage }) {
   const { attachName } = useGlobalContext();
   const linkName=attachName(title);
   return (

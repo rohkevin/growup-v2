@@ -15,7 +15,7 @@ function Navbar() {
   return (
     <nav>
       <div className={currentUser?"nav-container with-user":"nav-container"}>
-        <button className="hamburger-menu" onClick={()=>toggleMenu()}><FaBars/></button>
+        <button className="hamburger-menu" onClick={()=>toggleMenu()} aria-label="hamburger-menu button"><FaBars alt="hamburger-menu button image"/></button>
         <Link to="/" className="logo">GROW<span className="logo-highlight">UP</span></Link>
         <div className="nav-links-container">
           {
@@ -30,9 +30,9 @@ function Navbar() {
         </div>
         {
           currentUser ? 
-          <button className="login-btn personal-login-btn" onClick={toggleLoggedInModal}>{currentUser.email.charAt(0)}</button>
+          <button className="login-btn personal-login-btn" onClick={toggleLoggedInModal} aria-label="signed in user button">{currentUser.email.charAt(0)}</button>
           :
-          <button className="login-btn" onClick={toggleLoginModal}>Login</button>
+          <button className="login-btn" onClick={toggleLoginModal} aria-label="login button">Login</button>
         }
       </div>
     </nav>

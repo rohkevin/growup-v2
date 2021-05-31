@@ -17,13 +17,11 @@ function PasswordReset() {
   const handleReset = async(e) => {
     e.preventDefault();
     try {
-      // setAuthLoading(true);
       await resetPassword(emailRef.current.value);
       showAlert(true, 'success', 'Check your inbox for further instructions!');
     } catch {
       showAlert(true, 'failure', 'Failed to reset password');
     }
-    // setAuthLoading(false);
   }
   const handleSignup = () => {
     toggleLoginModal();
@@ -39,7 +37,7 @@ function PasswordReset() {
         
         <label>Email</label>
         <input type="email" ref={emailRef}></input>
-        <button className="pw-reset-btn" onClick={handleReset}>Send now</button>
+        <button type="button" className="pw-reset-btn" onClick={handleReset} aria-label="Reset password button">Send now</button>
         <p>Need an account? <Link to="/auth/reset" onClick={handleSignup} className="pw-reset-signup-link">Sign Up!</Link></p>
       </form>
     </section>

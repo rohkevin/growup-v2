@@ -15,9 +15,9 @@ function Sidenav() {
     <div className={`${sideNavOpen ? 'side-menu-overlay show-menu' : 'side-menu-overlay'}`}>
       <div className="side-menu">
         <div className="side-nav-header">
-          <button className="close-nav" onClick={toggleMenu}><FaTimes/></button>
+          <button className="close-nav" onClick={toggleMenu} aria-label="Close side nav button"><FaTimes alt="close side nav button"/></button>
           <h1>Grow up with us</h1>
-          <button className="subscribe-btn">Subscribe today</button>
+          <button className="subscribe-btn" aria-label="Subscribe now button">Subscribe today</button>
         </div>
         <div className="side-nav-main">
           {
@@ -26,7 +26,7 @@ function Sidenav() {
               return (
                 <Link to={`/topic/${name.toLowerCase()}`} key={id} className="side-nav-topic" onMouseOver={()=>hoverLink} onClick={()=>setSideNavOpen(!sideNavOpen)}>
                   <p>{name}</p>
-                  <FaChevronRight className="side-nav-chevron"/>
+                  <FaChevronRight className="side-nav-chevron" alt="side nav link decoration"/>
                 </Link>
               )
             })

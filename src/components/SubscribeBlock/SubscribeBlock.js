@@ -12,7 +12,7 @@ function SubscribeBlock() {
         name="subscribe-email-input"
       />
       <p>By signing up you agree to our <Link to="/" className="subpage-subscribe-terms">Terms of use</Link> and <Link to="/" className="subpage-subscribe-terms">Privacy policy</Link></p>
-      <button type="submit" className="subpage-subscribe-button">Join the community</button>
+      <button type="submit" className="subpage-subscribe-button" aria-label="Subscribe submit button">Join the community</button>
     </form>
   )
 }

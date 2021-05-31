@@ -23,11 +23,11 @@ function Footer() {
             </div>
           </div>
           <div className="footer-div">
-            <Link to="/" className="footer-link">About Us</Link>
-            <Link to="/" className="footer-link">Contact</Link>
-            <Link to="/" className="footer-link">Terms of Use</Link>
-            <Link to="/" className="footer-link">Privacy Policy</Link>
-            <Link to="/" className="footer-link">Ad Choice</Link>
+            <Link to="/" className="footer-link" aria-label="Link to About Us page">About Us</Link>
+            <Link to="/" className="footer-link" aria-label="Link to Contact page">Contact</Link>
+            <Link to="/" className="footer-link" aria-label="Link to Terms of Use page">Terms of Use</Link>
+            <Link to="/" className="footer-link" aria-label="Link to Privacy Policy page">Privacy Policy</Link>
+            <Link to="/" className="footer-link" aria-label="Link to Ad Choices page">Ad Choice</Link>
           </div>
         </div>
         <p className="footer-copyright">@2021 Growup, All rights reserved</p>

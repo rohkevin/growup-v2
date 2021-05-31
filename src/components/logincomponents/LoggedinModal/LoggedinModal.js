@@ -30,13 +30,11 @@ function LoggedinModal() {
   return (
     <div className={loggedinModalOpen ? `loggedin-modal show-loggedin` : 'loggedin-modal'} onClick={handleOutsideClick} ref={loginContainer}>
         <div className="loggedin-modal-container">
-          {/* <Link to="/dashboard" className="loggedin-menu-btn">Dashboard</Link>
-          <div className="divider"></div> */}
           <Link to="/write" className="loggedin-menu-btn">Write</Link>
           <div className="divider"></div>
           <Link to="/update-profile" className="loggedin-menu-btn">Settings</Link>
           <div className="divider"></div>
-          <button className="loggedin-menu-btn" onClick={handleLogout}>Log Out</button>
+          <button type="button" className="loggedin-menu-btn" onClick={handleLogout} aria-label="Logout button">Log Out</button>
         </div>
     </div>
   )

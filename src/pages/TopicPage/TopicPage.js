@@ -56,7 +56,7 @@ function TopicPage() {
                   })
                 }
               </div>
-              <button type="button" className={articleIndex === topicPosts.length ? `display-none` : `topics-viewmore-btn load-more-btn`} onClick={handleLoadMore}>Load more articles</button>
+              <button type="button" className={articleIndex === topicPosts.length ? `display-none` : `topics-viewmore-btn load-more-btn`} onClick={handleLoadMore} aria-label="Load more articles button">Load more articles</button>
             </section>
             <aside className="subpage-side-container">
               <SubscribeBlock/>

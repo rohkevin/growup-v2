@@ -31,9 +31,9 @@ function Searchbar() {
         />
         {
           showSearch ? 
-          <button type="button" className="search-btn" onClick={closeSearch}><FaTimes/></button>
+          <button type="button" className="search-btn" onClick={closeSearch} aria-label="Close Search"><FaTimes alt="close search button image"/></button>
           :
-          <button type="button" className="search-btn" onClick={toggleSearch}><FaSearch/></button>
+          <button type="button" className="search-btn" onClick={toggleSearch} aria-label="Open Search"><FaSearch alt="open search button image"/></button>
         }
       </div>
     </form>

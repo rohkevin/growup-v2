@@ -233,7 +233,7 @@ function NewStory() {
               }}
             />
 
-            <button type="submit" className="write-btn" onClick={createPost}>Submit</button>
+            <button type="submit" className="write-btn" onClick={createPost} aria-label="Submit new post button">Submit</button>
           </form>
         </div>
       </div>

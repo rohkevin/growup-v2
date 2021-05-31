@@ -2,6 +2,7 @@ import React from 'react'
 import './TopicPost.css'
 import { Link } from 'react-router-dom'
 import { useGlobalContext } from '../../../context'
+
 function TopicPost({ coverImage, title, author, authorImage, content }) {
   const { attachName } = useGlobalContext();
   const linkName=attachName(title);

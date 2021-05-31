@@ -82,7 +82,7 @@ function LoginModal() {
     <div className={loginModalOpen ? `login-modal-overlay show-login-overlay` : 'login-modal-overlay'} onClick={handleOutsideClick}>
       <div className={loginModalOpen ? `login-modal-outer-container show-login-modal` : 'login-modal-outer-container'}>
         <div className="login-modal-inner-container">
-          <button onClick={toggleLoginModal} className="login-close-btn"><FaTimes/></button>
+          <button onClick={toggleLoginModal} className="login-close-btn" aria-label="Close login modal button"><FaTimes alt="close login modal button image"/></button>
           <form className="login-form" onSubmit={handleSubmit}>
             {loginAlert.show && <LoginMessage {...loginAlert} removeAlert={showAlert}/>}
             {showSignup ? <h1>Sign Up</h1> : <h1>Log In</h1>}
@@ -112,18 +112,21 @@ function LoginModal() {
             }
             {
               showSignup ? 
-              <p className="login-modal-redirect">Already have an account? Click to <button type="button" onClick={toggleShowSignup} className="login-modal-highlight">log in</button></p>
+              <p className="login-modal-redirect">Already have an account? Click to <button type="button" onClick={toggleShowSignup} className="login-modal-highlight" aria-label="show sign up button">log in</button></p>
               :
               <>
-              
-              <Link to="/auth/reset" className="forgot-pw">Forgot your password?</Link>
-              <p className="login-modal-redirect">Want to sign up? Click to <button type="button" onClick={toggleShowSignup} className="login-modal-highlight"> sign up</button></p>
+                <Link to="/auth/reset" className="forgot-pw">Forgot your password?</Link>
+                <p className="login-modal-redirect">
+                  Want to sign up? Click to 
+                  <button type="button" onClick={toggleShowSignup} className="login-modal-highlight" aria-label="Sign up button">sign up</button>
+                </p>
               </>
             }
             <button 
               type="submit" 
               className="login-modal-btn login-submit" 
               disabled={authLoading}
+              aria-label="Submit login information button"
               >
               {showSignup ? 'Sign Up' : 'Log In'}
             </button>
@@ -131,8 +134,10 @@ function LoginModal() {
               type="button" 
               className="login-modal-btn login-alternate" 
               id="google" 
-              onClick={handleGoogleSignin}>
-              <FaGoogle className="login-alternate-logo"/>
+              onClick={handleGoogleSignin}
+              aria-label="Login with google button"
+              >
+              <FaGoogle className="login-alternate-logo" alt="Google logo"/>
               <p>Continue with Google</p>
             </button>
           </form>
