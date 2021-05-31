@@ -90,6 +90,7 @@ function Home() {
                           index+=1;
                           return <TopicPost key={id} index={index} {...post} />
                         }
+                        return null;
                       })
                     }
                 </div>
