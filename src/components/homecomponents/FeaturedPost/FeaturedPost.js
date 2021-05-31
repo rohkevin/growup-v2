@@ -12,7 +12,6 @@ function FeaturedPost({ id, url, coverImage, title, datePretty, author, authorIm
       </div>
       <div className="text-container">
         <p className="post-date">{datePretty}</p>
-        {console.log(datePretty)}
         <h2 className="post-title">{title}</h2>
         <div className="author-container">
           <div className="author-image-container">
