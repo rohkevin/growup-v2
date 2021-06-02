@@ -144,6 +144,7 @@ function AppProvider({ children }) {
         loginLocation, setLoginLocation,
         showSignup, setShowSignup,
         showAlert, loginAlert,
+        windowSize
       }}
     >
       { children } 
