@@ -30,7 +30,11 @@ function Home() {
     return <Loading/>
   }
   if (!blogPosts){
-    return <h2>No blog posts to display</h2>
+    return (
+      <div style={{minHeight: "100vh"}}>
+        <h2>No blog posts to display</h2>
+      </div>
+    )
   } else {
     return (
       <main id="homepage" onClick={handleOutsideClick}>
