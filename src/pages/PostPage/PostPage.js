@@ -48,7 +48,12 @@ function PostPage() {
                 <p>{date}</p>
                 <div className="postpage-author-container">
                   <div className="postpage-author-image-container">
-                    <img src={authorImage} alt={author}/>
+                    <img 
+                      src={authorImage} 
+                      alt={author} 
+                      width="30"
+                      height="30"  
+                    />
                   </div>
                   <p>{author}</p>
                 </div>

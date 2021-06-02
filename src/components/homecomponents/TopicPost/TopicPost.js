@@ -16,7 +16,12 @@ function TopicPost({ coverImage, title, author, authorImage, content }) {
         <p className="tp-text">{content.substring(0,150)}...</p>
         <div className="author-container">
           <div className="author-image-container">
-            <img src={authorImage} alt={author}/>
+            <img 
+              src={authorImage} 
+              alt={author} 
+              width="30"
+              height="30"  
+            />
           </div> 
           
           <p>{author}</p>

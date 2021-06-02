@@ -23,8 +23,8 @@ function FeaturedPost({ coverImage, title, datePretty, author, authorImage }) {
             <img 
               src={authorImage} 
               alt={author}
-              width='60'
-              height='60'  
+              width="30"
+              height="30"
             />
           </div>
           
