@@ -1,21 +1,3 @@
-const firebase = require("firebase");
-// var blogPostsJSON = require('./blogPostsJSON');
-// Required for side-effects
-require("firebase/firestore");
-
-// Initialize Cloud Firestore through Firebase
-firebase.initializeApp({
-    apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
-    authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
-    databaseURL: process.env.REACT_APP_FIREBASE_DATABASE_URL,
-    projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
-    storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
-    messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
-    appId: process.env.REACT_APP_FIREBASE_APP_ID 
-  });
-  
-var db = firebase.firestore();
-
 const blogPostsJSON = [
   {
     "id": "postID01",
@@ -196,26 +178,3 @@ const blogPostsJSON = [
   }
 
 ]
-
-console.log(blogPostsJSON);
-blogPostsJSON.forEach(function(obj) {
-    const newId = obj.id;
-    console.log(newId);
-    console.log(typeof newId);
-    db.collection("posts").doc(newId).set({
-        id: obj.id,
-        coverImage: obj.coverImage,
-        title: obj.title,
-        topic: obj.topic,
-        dateFormatted: obj.dateFormatted,
-        datePretty: obj.datePretty,
-        content: obj.content,
-        author: obj.author,
-        authorImage: obj.authorImage
-    }).then(function(docRef) {
-        console.log("Document written with ID: ", docRef.id);
-    })
-    .catch(function(error) {
-        console.error("Error adding document: ", error);
-    });
-});
