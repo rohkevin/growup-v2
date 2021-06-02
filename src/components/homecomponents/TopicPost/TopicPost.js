@@ -9,7 +9,7 @@ function TopicPost({ coverImage, title, author, authorImage, content }) {
   return (
     <Link to={`/article/${linkName}`} className="tp-container">
       <div className="tp-image">
-        <img src={coverImage} alt={title}></img>
+        <img src={coverImage} alt={title} />
       </div>
       <div className="tp-text-container">
         <h2 className="tp-post-title">{title}</h2>

@@ -17,6 +17,7 @@ function AppProvider({ children }) {
   const [blogPosts, setBlogPosts] = useState();
   const [searchTerm, setSearchTerm] = useState('');
   const [searchPosts, setSearchPosts] = useState(null);
+  const [windowSize, setWindowSize] = useState(window.innerWidth);
 
   // Retrieve Data
   useEffect(() => {
@@ -24,15 +25,56 @@ function AppProvider({ children }) {
 
     db.collection("posts").onSnapshot(snap => {
       const posts = snap.docs.map(doc => ({
-        id: doc.id,
-        ...doc.data()
-      }));
-      const reversed = posts.reverse();
-      setBlogPosts(reversed);
+          id: doc.id,
+          ...doc.data()
+        })
+    );
+      const reversedPosts = posts.reverse();
+      const resizedReversedPosts = reversedPosts.map(post => {
+        return {
+          ...post,
+          coverImage: `${post.coverImage}&w=${windowSize}`
+        }
+      })
+      setBlogPosts(resizedReversedPosts);
     })
 
     setIsLoading(false);
   }, [])
+
+  const checkSize = () => {
+    setWindowSize(window.innerWidth);
+  }
+  // Listen for changes to window size
+  useEffect(() => {
+    window.addEventListener('resize', checkSize);
+    return () => {
+      window.removeEventListener('resize', checkSize);
+    }
+  })
+
+  // Render images based on screen size
+  useEffect(() => {
+    if (blogPosts) {
+      const updatedImageSizePosts = blogPosts.map(post => {
+        let currentUrl = post.coverImage;
+        let widthIndex = currentUrl.indexOf('&w=');
+        let newUrlBase = currentUrl.slice(0,widthIndex);
+        let newUrl;
+        if (windowSize > 1500) {
+          newUrl = `${newUrlBase}&w=1500`;
+        } else {
+          newUrl = `${newUrlBase}&w=${windowSize}`;
+        }
+        console.log(newUrl)
+        return {
+          ...post,
+          coverImage: newUrl
+        }
+      })
+      setBlogPosts(updatedImageSizePosts);
+    }
+  }, [windowSize])
 
   // Menu
   const toggleMenu = () => {

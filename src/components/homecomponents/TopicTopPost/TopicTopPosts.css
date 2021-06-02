@@ -6,62 +6,38 @@
 ===========================
 ***************************
 */
-.topics-container{
-  display: grid;
-  grid-template-columns: 1fr;
-  justify-items: center;
-  padding: 2rem 0;
-  width: 100%;
-}
-.topics-top-posts{
-  background-color: var(--dark-font-color);
-  padding: 2rem var(--page-side-padding);
-  width: 100%;
-  display: grid;
-  justify-items: center;
-}
-.ttp-header{
-  color: var(--light-font-color);
-  font-size: 1.4rem;
-  font-style: italic;
-  padding: 0.5rem 0;
-}
-.ttp-container{
-  display: grid;
-  grid-template-columns: 1fr;
-}
+
 .ttp-post-container{
-  max-width: 100%;
   margin: 2rem 0;
   width: 100%;
+  height: 100%;
   display: grid;
-  grid-template-columns: 3fr 7fr;
+  grid-template-columns: 1fr 1fr;
   gap: 2rem;
   align-items: center;
 }
 .ttp-image{
   position: relative;
-  width: 125px;
-  height: 100px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  min-height: 100px;
+  height: 100%;
   overflow: hidden;
   border-radius: 2px;
 }
 .ttp-image img{
   object-fit: cover;
   position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  top: 50%;
-  left: 50%;
-  transform: translateX(-50%) translateY(-50%);
   border-radius: 2px;
-  max-height: 100%;
 }
 .ttp-image:hover img{
-  transform: scale(1.05) translateX(-50%) translateY(-50%);
-  top: 50%;
-  left: 50%;
-  transform-origin: center;
+  transform: scale(1.05);
 }
 .ttp-index{
   color: var(--dark-font-color);
@@ -108,14 +84,14 @@
     gap: 1rem;
   }
   .ttp-post-container{
-    height: 16rem;
+    /* height: 16rem; */
     grid-template-columns: 1fr;
     grid-template-rows: 3fr 2fr;
     gap: 0;
   }
   .ttp-image{
     margin: 0;
-    width: 250px;
+    /* width: 250px; */
     height: 100%;
   }
   .ttp-image img{

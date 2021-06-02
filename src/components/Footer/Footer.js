@@ -7,10 +7,11 @@ function Footer() {
   return (
     <footer>
       <div className="max-width">
-        <Link to="/" className="logo">GROW<span className="logo-highlight">UP</span></Link>
         <div className="footer-container">
-          <div className="footer-div">
-            
+
+          <Link to="/" className="logo">GROW<span className="logo-highlight">UP</span></Link>
+          <div className="footer-content">
+              
             <div className="footer-social-container">
               {
                 social.map((link)=>{
@@ -21,13 +22,13 @@ function Footer() {
                 })
               }
             </div>
-          </div>
-          <div className="footer-div">
-            <Link to="/" className="footer-link" aria-label="Link to About Us page">About Us</Link>
-            <Link to="/" className="footer-link" aria-label="Link to Contact page">Contact</Link>
-            <Link to="/" className="footer-link" aria-label="Link to Terms of Use page">Terms of Use</Link>
-            <Link to="/" className="footer-link" aria-label="Link to Privacy Policy page">Privacy Policy</Link>
-            <Link to="/" className="footer-link" aria-label="Link to Ad Choices page">Ad Choice</Link>
+            <div className="footer-div">
+              <Link to="/" className="footer-link" aria-label="Link to About Us page">About Us</Link>
+              <Link to="/" className="footer-link" aria-label="Link to Contact page">Contact</Link>
+              <Link to="/" className="footer-link" aria-label="Link to Terms of Use page">Terms of Use</Link>
+              <Link to="/" className="footer-link" aria-label="Link to Privacy Policy page">Privacy Policy</Link>
+              <Link to="/" className="footer-link" aria-label="Link to Ad Choices page">Ad Choice</Link>
+            </div>
           </div>
         </div>
         <p className="footer-copyright">@2021 Growup, All rights reserved</p>

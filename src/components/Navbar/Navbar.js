@@ -13,7 +13,7 @@ function Navbar() {
   const { currentUser } = useAuth();
 
   return (
-    <nav>
+    <nav id="nav-bar">
       <div className={currentUser?"nav-container with-user":"nav-container"}>
         <button className="hamburger-menu" onClick={()=>toggleMenu()} aria-label="hamburger-menu button"><FaBars alt="hamburger-menu button image"/></button>
         <Link to="/" className="logo">GROW<span className="logo-highlight">UP</span></Link>

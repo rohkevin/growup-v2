@@ -24,3 +24,5 @@ yarn-error.log*
 
 /src/todo.txt
 /NOTES.md
+
+/utils/ArchiveData

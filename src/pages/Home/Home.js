@@ -33,7 +33,7 @@ function Home() {
     return <h2>No blog posts to display</h2>
   } else {
     return (
-      <main onClick={handleOutsideClick}>
+      <main id="homepage" onClick={handleOutsideClick}>
         <div className="ad-container ad-type-1">
           <p>Ad placement here</p>
         </div>
