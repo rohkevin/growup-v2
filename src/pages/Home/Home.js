@@ -31,7 +31,7 @@ function Home() {
   }
   if (!blogPosts){
     return (
-      <div style={{minHeight: "100vh"}}>
+      <div style={{minHeight: "100vh", display: "grid", placeItems: "center"}}>
         <h2>No blog posts to display</h2>
       </div>
     )
