@@ -14,7 +14,7 @@ function LoggedinModal() {
   useEffect(()=>{
     const profile = loginContainer.current;
     const { center, bottom } = loginLocation;
-    profile.style.left = `${center}px`;
+    profile.style.left = `calc(${center}px + 15px)`;
     profile.style.top = `${bottom}px`;
   }, [loginLocation])
 
@@ -28,7 +28,11 @@ function LoggedinModal() {
     }
   }
   return (
-    <div className={loggedinModalOpen ? `loggedin-modal show-loggedin` : 'loggedin-modal'} onClick={handleOutsideClick} ref={loginContainer}>
+    <div 
+      className={loggedinModalOpen ? `loggedin-modal show-loggedin` : 'loggedin-modal'} 
+      onClick={handleOutsideClick} 
+      ref={loginContainer}
+    >
         <div className="loggedin-modal-container">
           <Link to="/write" className="loggedin-menu-btn">Write</Link>
           <div className="divider"></div>

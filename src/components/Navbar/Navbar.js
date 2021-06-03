@@ -15,35 +15,51 @@ function Navbar() {
   return (
     <nav id="nav-bar">
       <div className={currentUser?"nav-container with-user":"nav-container"}>
-        <button 
-          className="hamburger-menu" 
-          onClick={()=>toggleMenu()} 
-          aria-label="hamburger-menu button"
-          ><FaBars alt="hamburger-menu button image"/>
-        </button>
-        <Link to="/" className="logo">GROW<span className="logo-highlight">UP</span></Link>
-        <div className="nav-links-container">
-          {
-            topics.map((topic)=>{
-              const { id, name } = topic;
-              return <Link to={`/topic/${name.toLowerCase()}`} className="nav-link" key={id}>{name}</Link>
-            })
-          }
-        </div>
-        <div className="search-container">
-          <Searchbar/>
-        </div>
-        {
-          currentUser ? 
+        <div className="nav-left">
           <button 
-            className="login-btn personal-login-btn" 
-            onClick={toggleLoggedInModal} 
-            aria-label="signed in user button"
-          >{currentUser.email.charAt(0)}
+            className="hamburger-menu" 
+            onClick={()=>toggleMenu()} 
+            aria-label="hamburger-menu button"
+            ><FaBars alt="hamburger-menu button image"/>
           </button>
-          :
-          <button className="login-btn" onClick={toggleLoginModal} aria-label="login button">Login</button>
-        }
+          <Link to="/" className="logo">GROW<span className="logo-highlight">UP</span></Link>
+          <div className="nav-links-container">
+            {
+              topics.map((topic)=>{
+                const { id, name } = topic;
+                return <Link to={`/topic/${name.toLowerCase()}`} className="nav-link" key={id}>{name}</Link>
+              })
+            }
+          </div>
+        </div>
+
+        <div className="nav-right">
+          <div className="search-container">
+            <Searchbar/>
+          </div>
+          <div 
+            className="login-btn-container"
+            style={currentUser ? {width: '2rem'} : {width: '100px'}}
+            >
+            {
+              currentUser ? 
+              <button 
+                className="login-btn personal-login-btn" 
+                onClick={toggleLoggedInModal} 
+                aria-label="signed in user button"
+                >{currentUser.email.charAt(0)}
+              </button>
+              :
+              <button 
+                className="login-btn" 
+                onClick={toggleLoginModal} 
+                aria-label="login button"
+                >Login
+              </button>
+            }
+          </div>
+
+        </div>
       </div>
     </nav>
   )

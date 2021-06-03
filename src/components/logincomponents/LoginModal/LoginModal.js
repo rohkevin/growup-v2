@@ -29,6 +29,7 @@ function LoginModal() {
       }
     }
   }, [toggleLoginModal, showSignup])
+
   const handleSubmit = async(e) => {
     e.preventDefault();
     if (showSignup){
@@ -37,7 +38,6 @@ function LoginModal() {
       }
   
       try {
-        // setAuthLoading(true);
         await signup(emailRef.current.value, passwordRef.current.value);
         showAlert(true,'success','Redirecting...');
         toggleLoginModal();
@@ -57,27 +57,25 @@ function LoginModal() {
             break;
         }
       }
-
-      // setAuthLoading(false);
     } else {
       try {
-        // setAuthLoading(true);
         await login(emailRef.current.value, passwordRef.current.value);
         showAlert(true,'success','Redirecting...');
         toggleLoginModal();
       } catch {
         showAlert(true, 'failure', 'Failed to sign in!')
       }
-      // setAuthLoading(false);
     }
   }
   const toggleShowSignup = () => {
     setShowSignup(!showSignup);
   }
+  
   const handleGoogleSignin = () => {
     signInWithGoogle();
     toggleLoginModal();
   }
+
   return (
     <div className={loginModalOpen ? `login-modal-overlay show-login-overlay` : 'login-modal-overlay'} onClick={handleOutsideClick}>
       <div className={loginModalOpen ? `login-modal-outer-container show-login-modal` : 'login-modal-outer-container'}>

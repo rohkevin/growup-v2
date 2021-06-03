@@ -27,8 +27,15 @@
   width: 100%;
   max-width: var(--max-page-width);
 }
-.with-user {
-  grid-template-columns: 50px auto 50px
+.nav-left {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.nav-right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 .hamburger-menu{
   max-width: 100%;
@@ -54,30 +61,37 @@
 .nav-links-container{
   display: none;
 }
+.login-btn-container{
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  margin: 0;
+  padding: 0;
+}
 .login-btn{
+  width: 100px;
   max-width: 100%;
-  /* margin-right: 1rem; */
+  height: 2rem;
   border: transparent;
   border-radius: 5px;
   background-color: var(--secondary-color);
   color: var(--light-font-color);
   font-weight: 600;
   padding: 0 0.5rem;
-  height: 2rem;
   font-size: 0.875rem;
 }
 .login-btn:hover{
   background-color: var(--secondary-hover-color);
 }
 .personal-login-btn{
-  display: block;
+  display: grid;
+  place-items: center;
   width: 2rem;
   height: 2rem;
-  padding: 0;
+  padding: 0.5rem;
   border-radius: 50%;
   text-transform: capitalize;
-  font-size: 1.2rem;
-  justify-self: right;
 }
 
 .search-container {
@@ -87,31 +101,53 @@
 
 @media screen and (min-width: 600px) {
   .nav-container {
-    display: grid;
-    grid-template-columns: 50px auto 200px 100px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .nav-container .hamburger-menu {
+    width: 100%;
+  }
+  .nav-container .logo {
+    justify-self: flex-start;
+    width: 100%;
   }
   .with-user {
-    grid-template-columns: 50px auto 200px 50px
+    display: flex;
   }
   .search-container {
     display: block;
+    min-width: 50px;
+    width: 100%;
+    margin-right: 1rem;
   }
 }
+
 @media screen and (min-width: 800px) {
-  .nav-container {
-    grid-template-columns: auto auto auto 100px;
+  .nav-container{
+    display: grid;
+    width: 100%;
+    grid-template-columns: 3fr 1fr;
   }
-  .with-user {
-    grid-template-columns: auto auto auto 50px
+  .nav-left{
+    justify-content: space-between;
+    width: 100%;
+  }
+  .nav-left .logo {
+    width: 300px;
+  }
+  .nav-right {
+    width: 100%;
   }
   .hamburger-menu{
     display: none;
   }
   .nav-links-container{
+    flex-grow: 1;
+    width: 100%;
     max-width: 100%;
-    margin-left: 1rem;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
   }
   .nav-link{
