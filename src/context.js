@@ -66,7 +66,6 @@ function AppProvider({ children }) {
         } else {
           newUrl = `${newUrlBase}&w=${windowSize}`;
         }
-        console.log(newUrl)
         return {
           ...post,
           coverImage: newUrl

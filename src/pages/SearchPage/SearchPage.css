@@ -1,9 +1,18 @@
+.searchpage {
+  padding: 0;
+}
+.searchpage h1 {
+  text-transform: none;
+}
 .searchpage-main {
   width: 100%;
   margin: 2rem 0 4rem;
   padding: 0 1rem;
 }
 @media screen and (min-width: 800px){
+  .searchpage {
+    padding: 0 var(--page-side-padding);
+  }
   .searchpage-main {
     padding: 0;
   }

@@ -14,7 +14,10 @@ function SearchPage() {
   useEffect(() => {
     setIsLoading(true);
     if (searchTerm && blogPosts) {
-      const newSearchPosts = blogPosts.filter((post) => post.title.toLowerCase().includes(searchTerm.toLowerCase()));
+      const newSearchPosts = blogPosts.filter((post) => {
+        return post.title.toLowerCase().includes(searchTerm.toLowerCase());
+
+      });
       setSearchPosts(newSearchPosts);
     }
     setIsLoading(false);
@@ -29,11 +32,11 @@ function SearchPage() {
       <section className="subpage-container searchpage" onClick={handleOutsideClick}>
         <div className="max-width">
           <section className="subpage-header">
-            <h1>Search results for <span style={{fontSize:"inherit", textTransform: "none"}}>{searchTerm}</span></h1>
+            <h1>Search results for: <span style={{fontSize:"inherit", textTransform: "none", fontWeight: "400"}}>{searchTerm}</span></h1>
           </section>
           <div className="searchpage-main">
           {
-            searchPosts.length > 1 ? 
+            searchPosts.length > 0 ? 
               searchPosts.map((post) => {
                 return <SearchPost key={post.id} {...post} />
               })
