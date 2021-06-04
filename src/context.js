@@ -17,7 +17,7 @@ function AppProvider({ children }) {
   const [blogPosts, setBlogPosts] = useState();
   const [searchTerm, setSearchTerm] = useState('');
   const [searchPosts, setSearchPosts] = useState(null);
-  const [windowSize, setWindowSize] = useState(window.innerWidth);
+  const [windowSize, setWindowSize] = useState(800);
 
   // Retrieve Data
   useEffect(() => {
